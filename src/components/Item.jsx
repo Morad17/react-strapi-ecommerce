@@ -87,7 +87,7 @@ const Item = ({ item, width }) => {
                     .replace(/^./, (str) => str.toUpperCase())}
             </Typography>
             <Typography>{name}</Typography>
-            <Typograpgy fontWeight="bold">£{price}</Typograpgy>
+            <Typography fontWeight="bold">£{price}</Typography>
         </Box>
     </Box>
   )
