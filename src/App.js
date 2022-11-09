@@ -2,6 +2,7 @@ import Home from './pages/Home'
 import ItemDetails from './pages/ItemDetails'
 import Checkout from './pages/Checkout'
 import Confirmation from './pages/Confirmation'
+import CartMenu from './components/global/CartMenu'
 
 import { useEffect } from 'react'
 import {
@@ -10,6 +11,7 @@ import {
   Route,
   useLocation
 } from 'react-router-dom'
+
 
 
 
@@ -34,6 +36,7 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
+        <CartMenu />
       </BrowserRouter>
     </div>
   );

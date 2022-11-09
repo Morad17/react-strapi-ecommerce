@@ -1,8 +1,8 @@
 import  { Box, Button, Divider, IconButton, Typography } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 import CloseIcon from '@mui/icons-material/Close'
-import AddIcon, { Close } from '@mui/icons-material'
-import RemoveIcon from '@mui/icons-material'
+import AddIcon from '@mui/icons-material/Add'
+import RemoveIcon from '@mui/icons-material/Remove'
 import styled from '@emotion/styled'
 import { shades } from '../../theme'
 import {
@@ -92,7 +92,7 @@ const CartMenu = () => {
                                             <IconButton
                                                 onClick={() => dispatch(decreaseCount({ id: item.id}))}
                                             >
-                                                <RemoveIcon />
+                                            <RemoveIcon />
                                             </IconButton>
                                             <Typography>{item.count}</Typography>
                                             <IconButton
@@ -101,9 +101,9 @@ const CartMenu = () => {
                                                 <AddIcon />
                                             </IconButton>
                                         </Box>
+                                        {/*---Price---*/}
+                                        <Typography fontWeight="bold">£{item.attributes.price}</Typography>
                                     </FlexBox>
-                                    {/*---Price---*/}
-                                    <Typography fontWeight="bold">£{item.attributes.price}</Typography>
                                 </Box>
                             </FlexBox>
                             <Divider />
@@ -125,6 +125,10 @@ const CartMenu = () => {
                             minWidth: "100%",
                             padding: "20px 40px",
                             m: "20px 0"
+                        }}
+                        onClick={() => {
+                            navigate("/checkout")
+                            dispatch(setIsCartOpen({}))
                         }}
                     >Checkout</Button>
                 </Box>
