@@ -26,7 +26,7 @@ const ShoppingList = () => {
 
     useEffect(()=> {
         getItems()
-    }, [])
+    }, []) //eslint-disable-line react-hooks/exhaustive-deps
 
     const topRatedItems = items.filter(
         (item)=> item.attributes.category === "topRated"
@@ -70,6 +70,7 @@ const ShoppingList = () => {
             rowGap="20px"
             columnGap="1.33%"
             >
+                
             {value === "all" && items.map((item) => (
                 <Item item={item} key={`${item.name}-${item.id}`} />
             ))}
