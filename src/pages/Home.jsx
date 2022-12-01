@@ -1,6 +1,7 @@
 import React from 'react'
 import MainCarousel from "../components/MainCarousel"
 import ShoppingList from "../components/ShoppingList"
+import Subscribe from '../components/global/Subscribe'
 
 import Navbar from '../components/global/Navbar'
 
@@ -10,6 +11,7 @@ const Home = () => {
         <Navbar />
         <MainCarousel />
         <ShoppingList />
+        <Subscribe />
     </div>
   )
 }
